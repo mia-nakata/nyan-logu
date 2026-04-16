@@ -971,8 +971,8 @@ body {
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 94% 87%; 
-  border-radius: 50%; 
+  background-size: 94% 87%;
+  border-radius: 50%;
 }
 
 .p-gift__card--orange {
@@ -1054,7 +1054,9 @@ body {
 ========================================================================== */
 .p-reviews {
   position: relative;
-  background-color: var(--Milky-White); /* デザインに合わせた背景色に変更してください */
+  background-color: var(
+    --Milky-White
+  ); /* デザインに合わせた背景色に変更してください */
   padding-block: clamp(60px, 8vw, 100px);
   overflow: hidden;
   z-index: 0;
@@ -1184,9 +1186,13 @@ body {
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
-  .swiper-button-prev.js-reviews-prev { left: 0; }
-  .swiper-button-next.js-reviews-next { right: 0; }
-  
+  .swiper-button-prev.js-reviews-prev {
+    left: 0;
+  }
+  .swiper-button-next.js-reviews-next {
+    right: 0;
+  }
+
   .swiper-button-prev.js-reviews-prev::after,
   .swiper-button-next.js-reviews-next::after {
     font-size: 20px;
@@ -1265,7 +1271,7 @@ body {
 }
 
 .p-faq__icon::after {
-  content: "";
+  content: '';
   width: 8px;
   height: 8px;
   border-bottom: 2px solid var(--Honey-Yellow);
@@ -1274,7 +1280,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.p-faq__q[aria-expanded="true"] .p-faq__icon::after {
+.p-faq__q[aria-expanded='true'] .p-faq__icon::after {
   transform: translateY(2px) rotate(-135deg);
 }
 
@@ -1291,7 +1297,7 @@ body {
   transition: grid-template-rows 0.3s ease-in-out;
 }
 
-.p-faq__a[aria-hidden="false"] {
+.p-faq__a[aria-hidden='false'] {
   grid-template-rows: 1fr;
 }
 
@@ -1396,22 +1402,22 @@ body {
   .p-cta__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-      "visual title"
-      "visual stores";
+    grid-template-areas:
+      'visual title'
+      'visual stores';
     gap: 24px clamp(32px, 5vw, 64px);
     align-items: center;
   }
-  
+
   .p-cta__title-area {
     grid-area: title;
     align-self: end;
   }
-  
+
   .p-cta__visual {
     grid-area: visual;
   }
-  
+
   .p-cta__stores {
     grid-area: stores;
     align-self: start; /* 画像の縦中央付近に寄せる */
@@ -1429,16 +1435,16 @@ body {
     gap: clamp(32px, 5vw, 40px);
     text-align: center;
   }
-  
+
   /* orderプロパティでHTMLの記述順に関係なく表示順を指定 */
   .p-cta__title-area {
     order: 1; /* 1番上：テキスト */
   }
-  
+
   .p-cta__visual {
     order: 2; /* 2番目：画像 */
   }
-  
+
   .p-cta__stores {
     order: 3; /* 3番目：ボタン */
     justify-content: center;
@@ -1450,10 +1456,7 @@ body {
 ========================================================================== */
 .p-footer {
   position: relative;
-  background-image: url('../img/bg-footer-pc.webp');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: var(--Honey-Yellow);
   overflow: hidden;
   z-index: 0;
 }
@@ -1465,9 +1468,10 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/bg-footer-pc.svg'); /* PC用の背景装飾画像 */
-  background-size: cover;
+  background-image: url('../img/bg-footer-pc.svg');
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   pointer-events: none;
   z-index: -1;
 }
@@ -1487,7 +1491,7 @@ body {
   bottom: clamp(80px, 10vw, 100px); /* ロゴの少し上に基準点を置く */
   left: 0;
   width: 100%;
-  height: 0; 
+  height: 0;
   z-index: 0;
   pointer-events: none; /* 画像がリンクのクリック判定を邪魔しないようにする */
 }
@@ -1562,10 +1566,9 @@ body {
 ========================================================================== */
 @media screen and (max-width: 767px) {
   .p-footer__bg {
-    /* SP表示の際に背景の装飾が切れてしまう場合は、SP専用の背景画像に切り替えます */
-    background-image: url('../img/bg-footer-sp.svg'); 
+    background-image: url('../img/bg-footer-sp.svg');
   }
-  
+
   .p-footer__inner {
     padding-top: 80px;
   }
