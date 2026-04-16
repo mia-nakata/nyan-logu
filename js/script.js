@@ -45,22 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
   if (fvSliderElement && typeof Swiper !== 'undefined') {
     const fvSwiper = new Swiper('.js-fv-swiper', {
       loop: true,
-      loopedSlides: 16, // 複製するスライド数
-      centeredSlides: true, // アクティブなスライドを中央に配置
-      speed: 1000, // スライドのトランジション速度
+      loopedSlides: 16,
+      centeredSlides: true,
+      speed: 1000,
       autoplay: {
         delay: 3500,
         disableOnInteraction: false,
       },
-
-      // ▼ 変更：SP用のデフォルト設定（中央1枚 + 左右見切れ）
       slidesPerView: 2,
       spaceBetween: 16,
-
       breakpoints: {
-        // ▼ 変更：PCサイズ（768px以上）の設定
         768: {
-          slidesPerView: 6, // 画面内に「6枚分」の幅を確保（5枚表示＋両端見切れ）
+          slidesPerView: 6,
           spaceBetween: 24,
         },
       },
@@ -68,22 +64,79 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==================================================
-  // 3. FAQ Accordion
+  // 3. Features Swiper Init (SP Only)
+  // ==================================================
+  const featureSwipers = document.querySelectorAll('.js-features-swiper');
+  
+  if (featureSwipers.length > 0 && typeof Swiper !== 'undefined') {
+    featureSwipers.forEach((swiperEl) => {
+      new Swiper(swiperEl, {
+        noSwiping: true, 
+        breakpoints: {
+          0: {
+            enabled: true,
+            slidesPerView: 1,
+            spaceBetween: 24,
+            navigation: {
+              nextEl: swiperEl.querySelector('.js-features-next'),
+              prevEl: swiperEl.querySelector('.js-features-prev'),
+            },
+          },
+          768: {
+            enabled: false,
+            spaceBetween: 0,
+          }
+        }
+      });
+    });
+  }
+
+  // ==================================================
+  // 4. Reviews Swiper Init (SP Only)
+  // ==================================================
+  let reviewsSwiper;
+  
+  const initReviewsSwiper = () => {
+    const swiperEl = document.querySelector('.js-reviews-swiper');
+    if (!swiperEl || typeof Swiper === 'undefined') return;
+
+    if (window.innerWidth <= 767) {
+      if (!reviewsSwiper) {
+        reviewsSwiper = new Swiper('.js-reviews-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 16,
+          navigation: {
+            nextEl: '.js-reviews-next',
+            prevEl: '.js-reviews-prev',
+          },
+        });
+      }
+    } else {
+      if (reviewsSwiper) {
+        reviewsSwiper.destroy(true, true);
+        reviewsSwiper = undefined;
+      }
+    }
+  };
+
+  // 初回実行とリサイズ時のイベント登録
+  initReviewsSwiper();
+  window.addEventListener('resize', initReviewsSwiper);
+
+  // ==================================================
+  // 5. FAQ Accordion Toggle
   // ==================================================
   const faqToggles = document.querySelectorAll('.js-faq-toggle');
-
+  
   if (faqToggles.length > 0) {
-    faqToggles.forEach((button) => {
-      button.addEventListener('click', () => {
-        const answer = button.nextElementSibling;
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-        // a11y: aria-expandedの切り替え
-        button.setAttribute('aria-expanded', String(!isExpanded));
-
-        // 回答エリアの表示・非表示切り替え
+    faqToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !isExpanded);
+        
+        const answer = toggle.parentElement.nextElementSibling;
         if (answer) {
-          answer.hidden = isExpanded;
+          answer.setAttribute('aria-hidden', isExpanded);
         }
       });
     });
