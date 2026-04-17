@@ -382,11 +382,12 @@ body {
   margin-bottom: 8px;
 }
 .fv__title {
-  font-family: var(--font-nico);
+  font-family: var(--font-nico)!important;
   font-size: clamp(24px, 3vw, 46px);
   font-weight: 700;
 }
 .fv__title-bg {
+  font-family: var(--font-nico)!important;
   display: inline-block;
   position: relative;
   z-index: 1;
