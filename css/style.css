@@ -422,32 +422,32 @@ body {
 .troubles__bubble--1 {
   top: 15%;
   left: 0;
-  background-image: url('/img/bubble-bg-1.svg');
+  background-image: url('../img/bubble-bg-1.svg');
   padding: 70px 46px 50px;
 }
 .troubles__bubble--2 {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-image: url('/img/bubble-bg-2.svg');
+  background-image: url('../img/bubble-bg-2.svg');
   padding: 50px 70px 40px;
 }
 .troubles__bubble--3 {
   top: 15%;
   right: 0;
-  background-image: url('/img/bubble-bg-3.svg');
+  background-image: url('../img/bubble-bg-3.svg');
   padding: 70px 31px 60px;
 }
 .troubles__bubble--4 {
   bottom: 10%;
   left: 5%;
-  background-image: url('/img/bubble-bg-4.svg');
+  background-image: url('../img/bubble-bg-4.svg');
   padding: 60px 57px 40px;
 }
 .troubles__bubble--5 {
   bottom: 10%;
   right: 5%;
-  background-image: url('/img/bubble-bg-5.svg');
+  background-image: url('../img/bubble-bg-5.svg');
   padding: 60px 70px 55px;
 }
 
@@ -541,20 +541,20 @@ body {
   .troubles__bubble--1 {
     top: 15%;
     left: 0;
-    background-image: url('/img/bubble-bg-1.svg');
+    background-image: url('../img/bubble-bg-1.svg');
     padding: 70px 20px 50px;
   }
   .troubles__bubble--2 {
     top: 0;
     left: 40%;
     transform: translateX(-50%);
-    background-image: url('/img/bubble-bg-2.svg');
+    background-image: url('../img/bubble-bg-2.svg');
     padding: 50px 50px 40px;
   }
   .troubles__bubble--4 {
     bottom: 10%;
     left: 5%;
-    background-image: url('/img/bubble-bg-4.svg');
+    background-image: url('../img/bubble-bg-4.svg');
     padding: 50px 57px 40px;
   }
   .troubles__figure {
@@ -637,7 +637,7 @@ body {
 .concept__cloud {
   max-width: 860px;
   margin: 0 auto;
-  background-image: url('/img/cloud-bg.svg');
+  background-image: url('../img/cloud-bg.svg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -672,7 +672,7 @@ body {
     font-size: var(--text-24);
   }
   .concept__cloud {
-    background-image: url('/img/cloud-bg-sp.svg');
+    background-image: url('../img/cloud-bg-sp.svg');
     padding: 60px 20px;
     border-radius: 40px;
     scale: 1.1;
@@ -696,7 +696,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/bg-geometric-pattern.svg'); /* デザインの背景画像を指定 */
+  background-image: url('../img/bg-geometric-pattern.svg');
   background-size: cover;
   background-position: center;
   opacity: 0.5;
@@ -976,15 +976,15 @@ body {
 }
 
 .p-gift__card--orange {
-  background-image: url('/img/card-pattern-orange.webp');
+  background-image: url('../img/card-pattern-orange.webp');
 }
 
 .p-gift__card--yellow {
-  background-image: url('/img/card-pattern-yellow.webp');
+  background-image: url('../img/card-pattern-yellow.webp');
 }
 
 .p-gift__card--blue {
-  background-image: url('/img/card-pattern-blue.webp');
+  background-image: url('../img/card-pattern-blue.webp');
 }
 
 .p-gift__card--orange,
@@ -1068,7 +1068,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/bg-geometric-pattern.svg'); /* 共通背景がある場合 */
+  background-image: url('../img/bg-geometric-pattern.svg');
   background-size: cover;
   background-position: center;
   opacity: 0.5;
@@ -1215,7 +1215,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/bg-geometric-pattern.svg'); /* 共通背景がある場合 */
+  background-image: url('../img/bg-geometric-pattern.svg');
   background-size: cover;
   background-position: center;
   opacity: 0.5;
@@ -1224,7 +1224,7 @@ body {
 }
 
 .p-faq__container {
-  max-width: 800px; /* テキストが読みやすいように最大幅を少し絞る */
+  max-width: 800px;
 }
 
 .p-faq__title {
@@ -1332,7 +1332,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/bg-geometric-pattern.svg'); /* 共通背景 */
+  background-image: url('../img/bg-geometric-pattern.svg');
   background-size: cover;
   background-position: center;
   opacity: 0.5;
