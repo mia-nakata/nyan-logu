@@ -29,28 +29,38 @@
     />
   </head>
   <body>
-    <header class="header">
-      <div class="header__inner">
-        <h1 class="header__logo">
-          <a href="/"
-            ><img
-              src="./img/logo.svg"
-              alt="にゃんログのロゴ画像"
-              width="160"
-              height="36"
-          /></a>
-        </h1>
-        <button
-          class="header__hamburger js-drawer-open"
-          aria-label="メニューを開閉する"
-          aria-expanded="false"
-        >
-          <span class="header__hamburger-line"></span>
-          <span class="header__hamburger-line"></span>
-          <span class="header__hamburger-line"></span>
-        </button>
-      </div>
-    </header>
+<header class="header js-header">
+  <div class="header__inner">
+    <h1 class="header__logo">
+      <a href="/"><img src="/img/logo.svg" alt="にゃんログ" width="160" height="36"></a>
+    </h1>
+
+    <nav class="header__nav u-hidden-sp">
+      <ul class="header__nav-list">
+        <li><a href="#" class="header__nav-link js-drawer-link">TOP</a></li>
+        <li><a href="#troubles" class="header__nav-link js-drawer-link">お悩み</a></li>
+        <li><a href="#concept" class="header__nav-link js-drawer-link">CONCEPT</a></li>
+        <li><a href="#features" class="header__nav-link js-drawer-link">機能紹介</a></li>
+        <li><a href="#reviews" class="header__nav-link js-drawer-link">レビュー</a></li>
+        <li><a href="#faq" class="header__nav-link js-drawer-link">Q&A</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__stores u-hidden-sp">
+      <a href="#" class="header__store-btn" target="_blank" rel="noopener">
+        <img src="/img/btn-appstore.svg" alt="App Store" width="140" height="42">
+      </a>
+      <a href="#" class="header__store-btn" target="_blank" rel="noopener">
+        <img src="/img/btn-googleplay.svg" alt="Google Play" width="140" height="42">
+      </a>
+    </div>
+
+    <button class="header__hamburger js-drawer-open u-hidden-pc" aria-label="メニューを開閉する" aria-expanded="false">
+      <span class="header__hamburger-line"></span>
+      <span class="header__hamburger-line"></span>
+    </button>
+  </div>
+</header>
 
     <main>
       <section class="fv">

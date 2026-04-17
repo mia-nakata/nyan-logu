@@ -36,6 +36,29 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  // ==================================================
+  // 1.5 Header Scroll Tracking (PC Only)
+  // ==================================================
+  const headerElement = document.querySelector('.js-header');
+  const fvSection = document.querySelector('.fv');
+
+  if (headerElement && fvSection) {
+    // スクロールイベントを監視
+    window.addEventListener('scroll', () => {
+      // PC幅（768px以上）の時のみ動作させる
+      if (window.innerWidth >= 1025) {
+        // ファーストビュー(FV)の高さを取得
+        const fvHeight = fvSection.offsetHeight;
+        
+        // スクロール量がFVの高さを超えたら表示クラスを付与
+        if (window.scrollY > fvHeight) {
+          headerElement.classList.add('is-active');
+        } else {
+          headerElement.classList.remove('is-active');
+        }
+      }
+    });
+  }
 
   // ==================================================
   // 2. FV Swiper Init
