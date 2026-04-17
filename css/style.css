@@ -474,6 +474,7 @@ body {
   align-items: center;
   gap: 8px;
   padding-top: var(--Spacing-80);
+  padding-bottom: var(--Spacing-16);
 }
 .troubles__arrow {
   display: block;
@@ -578,7 +579,6 @@ body {
 .concept {
   position: relative;
   background-color: var(--Milky-White);
-  padding-block: var(--Spacing-80);
   overflow: hidden;
   z-index: 0;
 }
@@ -1096,14 +1096,16 @@ body {
   height: auto;
 }
 
-/* スライダー全体を囲うラッパー（SP時の矢印配置用） */
+.p-reviews__title-decor--reverse {
+  transform: scaleX(-1);
+}
+
 .p-reviews__slider-wrap {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* カード本体のデザイン */
 .p-reviews__card {
   background-color: var(--White);
   border: 1px solid var(--Bitter-Choco);
