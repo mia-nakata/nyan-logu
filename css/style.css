@@ -25,7 +25,7 @@
 
   /* Typography (Figma) */
   --font-zen: "Zen Maru Gothic", sans-serif;
-  --font-nico: "Nico Moji", sans-serif;
+  --font-nico: "Nico Moji", sans-serif!important;
   --text-14: 0.875rem;
   --text-16: 1rem;
   --text-18: 1.125rem;
@@ -382,17 +382,18 @@ body {
   margin-bottom: 8px;
 }
 .fv__title {
-  font-family: var(--font-nico)!important;
+  font-family: var(--font-nico);
   font-size: clamp(24px, 3vw, 46px);
-  font-weight: 700;
+  font-weight: 400;
 }
 .fv__title-bg {
-  font-family: var(--font-nico)!important;
+  font-family: var(--font-nico);
   display: inline-block;
   position: relative;
   z-index: 1;
   margin-left: -24px;
   letter-spacing: 0.05rem;
+  font-weight: 400;
 }
 
 .fv__title-bg::after {
