@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
+@font-face {
+  font-family: "Nico Moji";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("https://fonts.gstatic.com/ea/nicomoji/v1/NicoMoji-Regular.woff2")
+      format("woff2"),
+    url("https://fonts.gstatic.com/ea/nicomoji/v1/NicoMoji-Regular.woff")
+      format("woff"),
+    url("https://fonts.gstatic.com/ea/nicomoji/v1/NicoMoji-Regular.ttf")
+      format("truetype");
+}
+
 /* ==========================================================================
    Variables (Design System & Typography)
 ========================================================================== */
@@ -25,7 +38,7 @@
 
   /* Typography (Figma) */
   --font-zen: "Zen Maru Gothic", sans-serif;
-  --font-nico: "Nico Moji", sans-serif!important;
+  --font-nico: "Nico Moji", sans-serif;
   --text-14: 0.875rem;
   --text-16: 1rem;
   --text-18: 1.125rem;
@@ -381,33 +394,11 @@ body {
   font-weight: 500;
   margin-bottom: 8px;
 }
-.fv__title {
-  font-family: var(--font-nico);
-  font-size: clamp(24px, 3vw, 46px);
-  font-weight: 400;
+.fv__title img {
+  width: auto;
+  height: clamp(32px, 4vw, 46px);
+  margin-left: -30px;
 }
-.fv__title-bg {
-  font-family: var(--font-nico);
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  margin-left: -24px;
-  letter-spacing: 0.05rem;
-  font-weight: 400;
-}
-
-.fv__title-bg::after {
-  content: "";
-  position: absolute;
-  width: 90%;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 10px;
-  border-bottom: 20px solid var(--Paw-Pink);
-  z-index: -1;
-}
-
-/* Slider (Visual) */
 .fv__visual {
   width: 100%;
   padding: 100px 0;
@@ -429,7 +420,6 @@ body {
   z-index: 1;
 }
 
-/* 中央（アクティブ）の指定 */
 .fv__slide.swiper-slide-active {
   opacity: 1;
   transform: scale(1.2) !important;
@@ -445,7 +435,6 @@ body {
   object-fit: cover;
 }
 
-/* PC Floating Layout */
 .fv__pc-float {
   position: absolute;
   top: 0;
@@ -693,8 +682,8 @@ body {
     transform: scale(0.9);
     transition: transform 0.3s ease;
   }
-  .troubles {
-    padding-block: var(--Spacing-48);
+  .fv__title img {
+    margin-left: 0px;
   }
   .troubles__title {
     text-align: left;
@@ -753,6 +742,7 @@ body {
     order: 2;
   }
   .troubles__figure img {
+    max-width: 150px;
     padding-top: 0px;
   }
   .troubles__conclusion-text {
@@ -761,6 +751,9 @@ body {
   .troubles__arrow {
     width: 16px;
     height: 16px;
+  }
+  .troubles__arrows {
+    padding-top: var(--Spacing-32);
   }
 }
 
@@ -1101,7 +1094,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: clamp(32px, 5vw, 64px);
-  margin-bottom: clamp(48px, 6vw, 80px);
+  margin-bottom: clamp(0px, 0vw, 80px);
 }
 
 .p-gift__text-area {
@@ -1613,12 +1606,12 @@ body {
 
   .p-cta__stores {
     grid-area: stores;
-    align-self: start; /* 画像の縦中央付近に寄せる */
+    align-self: start;
   }
 }
 
 /* ==========================================================================
-   SP Layout (Flexboxのorderを使った並び替え)
+   SP Layout
 ========================================================================== */
 @media screen and (max-width: 767px) {
   .p-cta__grid {
@@ -1629,17 +1622,16 @@ body {
     text-align: center;
   }
 
-  /* orderプロパティでHTMLの記述順に関係なく表示順を指定 */
   .p-cta__title-area {
-    order: 1; /* 1番上：テキスト */
+    order: 1;
   }
 
   .p-cta__visual {
-    order: 2; /* 2番目：画像 */
+    order: 2;
   }
 
   .p-cta__stores {
-    order: 3; /* 3番目：ボタン */
+    order: 3;
     justify-content: center;
   }
 }
@@ -1654,24 +1646,38 @@ body {
   z-index: 0;
 }
 
-/* 背景の白波線、肉球、魚などのあしらい */
 .p-footer__bg {
+  display: none;
+}
+
+.p-footer::before,
+.p-footer::after {
+  content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  width: clamp(100px, 25vw, 300px);
   height: 100%;
-  background-image: url("../img/bg-footer-pc.svg");
   background-size: contain;
-  background-position: center;
   background-repeat: no-repeat;
   pointer-events: none;
   z-index: -1;
 }
 
+.p-footer::before {
+  left: 0;
+  background-image: url("../img/bg-footer-left.svg");
+  background-position: left top;
+}
+
+.p-footer::after {
+  right: 0;
+  background-image: url("../img/bg-footer-right.svg");
+  background-position: right top;
+}
+
 .p-footer__inner {
   position: relative;
-  padding-top: clamp(80px, 10vw, 140px);
+  padding-top: clamp(20px, 2vw, 60px);
   display: flex;
   justify-content: center;
 }
@@ -1681,12 +1687,12 @@ body {
 ======================================= */
 .p-footer__cats {
   position: absolute;
-  bottom: clamp(80px, 10vw, 100px); /* ロゴの少し上に基準点を置く */
+  bottom: clamp(80px, 10vw, 100px);
   left: 0;
   width: 100%;
   height: 0;
   z-index: 0;
-  pointer-events: none; /* 画像がリンクのクリック判定を邪魔しないようにする */
+  pointer-events: none;
 }
 
 .p-footer__cat {
@@ -1695,20 +1701,20 @@ body {
   height: auto;
 }
 
-/* それぞれの猫の配置調整（l-container幅に対する％指定） */
 .p-footer__cat--sit {
   left: 5%;
-  width: clamp(80px, 8vw, 120px);
+  width: clamp(80px, 7vw, 120px);
+  transform: translateY(30px);
 }
 
 .p-footer__cat--loaf {
-  left: 28%;
+  left: 23%;
   width: clamp(100px, 10vw, 140px);
 }
 
 .p-footer__cat--stretch {
   right: 5%;
-  width: clamp(160px, 15vw, 240px);
+  width: clamp(160px, 20vw, 240px);
 }
 
 /* =======================================
@@ -1726,8 +1732,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(8px, 1.5vw, 16px); /* 猫とロゴの間の余白 */
-  margin-bottom: clamp(32px, 5vw, 48px);
+  margin-bottom: clamp(32px, 5vw, 30px);
   transition: opacity 0.3s ease;
   text-decoration: none;
 }
@@ -1736,13 +1741,11 @@ body {
   opacity: 0.7;
 }
 
-/* 中央のフワフワな猫 */
 .p-footer__brand-cat {
-  width: clamp(100px, 15vw, 140px);
+  width: clamp(100px, 15vw, 110px);
   height: auto;
 }
 
-/* にゃんログのテキストロゴ */
 .p-footer__brand-logo {
   width: clamp(160px, 25vw, 240px);
   height: auto;
@@ -1758,8 +1761,24 @@ body {
    SP Layout
 ========================================================================== */
 @media screen and (max-width: 767px) {
+.p-footer::before,
+  .p-footer::after {
+    display: none;
+  }
+
   .p-footer__bg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url("../img/bg-footer-sp.svg");
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
   }
 
   .p-footer__inner {
@@ -1814,6 +1833,7 @@ body {
   font-size: var(--text-18);
   font-weight: 700;
   border-top: 1px solid var(--Bitter-Choco);
+  background-color: var(--White);
 }
 .drawer__item:last-child .drawer__link {
   border-bottom: 1px solid var(--Bitter-Choco);
