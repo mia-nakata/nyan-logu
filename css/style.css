@@ -1157,6 +1157,7 @@ body {
   background-position: center;
   background-size: 94% 87%;
   border-radius: 50%;
+  min-width: 0;
 }
 
 .p-gift__card--orange {
@@ -1194,7 +1195,7 @@ body {
 /* ==========================================================================
    SP Layout (Gift Section)
 ========================================================================== */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .p-gift__title {
     text-align: left;
   }
