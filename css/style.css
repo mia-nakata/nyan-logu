@@ -56,7 +56,6 @@
 ========================================================================== */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
 }
 
 body {
@@ -109,6 +108,31 @@ body {
     display: block;
   }
 }
+
+/* ==========================================================================
+   Smooth Scroll Offset (スムーススクロール時の停止位置調整)
+========================================================================== */
+#troubles,
+#concept,
+#features,
+#reviews,
+#faq {
+  scroll-margin-top: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  #troubles {
+    scroll-margin-top: 70px;
+  }
+
+  #concept,
+  #features,
+  #reviews,
+  #faq {
+    scroll-margin-top: 20px;
+  }
+}
+
 /* ==========================================================================
    Header & Floating Navigation
 ========================================================================== */
@@ -1746,11 +1770,11 @@ body {
 }
 .drawer__download {
   display: flex;
-  gap: 10px;
+  gap: 16px;
   justify-content: center;
 }
 .drawer__download img {
-  height: 40px;
+  height: clamp(52px, 6vw, 60px);
   background: none;
 }
 /* ==========================================================================

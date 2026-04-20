@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // スクロールイベントを監視
     window.addEventListener('scroll', () => {
       // PC幅（768px以上）の時のみ動作させる
-      if (window.innerWidth >= 1025) {
+      if (window.innerWidth >= 768) {
         // ファーストビュー(FV)の高さを取得
         const fvHeight = fvSection.offsetHeight;
 
