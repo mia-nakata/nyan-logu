@@ -404,7 +404,7 @@ body {
 .fv__mockup {
   width: 100%;
   height: auto;
-  border-radius: 20px;
+  border-radius: 36px;
   box-shadow: 0 8px 24px rgba(74, 55, 40, 0.15);
   background-color: #fafafa;
   object-fit: cover;
