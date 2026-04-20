@@ -471,7 +471,7 @@ body {
   opacity: 0.7;
 }
 .fv__store-btn img {
-  height: clamp(40px, 4vw, 56px);
+  height: clamp(52px, 6vw, 60px);
   width: auto;
   background: none;
 }
