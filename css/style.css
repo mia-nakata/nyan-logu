@@ -54,6 +54,11 @@
 /* ==========================================================================
    Common & Utility Styles
 ========================================================================== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 body {
   font-family: var(--font-zen);
   font-size: var(--text-16);
