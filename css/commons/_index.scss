@@ -1,5 +1,8 @@
 @use "destyle";
 
+/* ==========================================================================
+   Common & Base Styles (基本設定)
+========================================================================== */
 html {
   scroll-behavior: smooth;
 }
@@ -14,6 +17,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ==========================================================================
+   Layout Classes (レイアウト用の箱)
+========================================================================== */
 .l-container {
   width: 100%;
   max-width: 1200px;
@@ -32,8 +38,49 @@ body {
 }
 
 /* ==========================================================================
-   Utility Classes (表示・非表示の切り替え)
+   Smooth Scroll Offset (スムーススクロール時の停止位置調整)
 ========================================================================== */
+#troubles,
+#concept,
+#features,
+#reviews,
+#faq {
+  scroll-margin-top: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  #troubles {
+    scroll-margin-top: 70px;
+  }
+
+  #concept,
+  #features,
+  #reviews,
+  #faq {
+    scroll-margin-top: 20px;
+  }
+}
+
+/* ==========================================================================
+   Utility Classes (汎用クラス)
+========================================================================== */
+.u-bg-decor {
+  background-image: url("../img/bg-decor-pattern.svg"); 
+  background-size: 500px;
+  background-repeat: repeat;
+  background-position: center top;
+}
+
+.u-margin-bottom-24 {
+  margin-bottom: clamp(16px, 2vw, 24px) !important;
+}
+
+.u-text-large {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+/* ▼ 表示・非表示の切り替え */
 @media screen and (min-width: 1025px) {
   .u-hidden-pc {
     display: none !important;
