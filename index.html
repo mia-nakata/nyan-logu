@@ -10,6 +10,21 @@
       name="description"
       content="「にゃんログ」は、猫と飼い主のための新しいライフログアプリです。フォロワー数や「映え」を気にせず、ブレた写真や変顔も大歓迎！親バカ全開で愛を語り合いながら、大切な命の記録もしっかり守ります。無料で今すぐダウンロードして、うちの子の成長を一緒に歩みましょう！"
     />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
+    <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+
+    <meta property="og:site_name" content="にゃんログ" />
+    <meta property="og:url" content="https://mia-nakata.github.io/nyan-logu/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="にゃんログ | 成長を共に歩む、親バカ全開の猫専用「ライフログアプリ」" />
+    <meta property="og:description" content="フォロワー数や「映え」を気にせず、親バカ全開で愛を語り合いながら大切な命の記録もしっかり守る。猫と飼い主のための新しいライフログアプリです。" />
+    <meta property="og:image" content="https://mia-nakata.github.io/nyan-logu/img/ogp.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="にゃんログ | 成長を共に歩む、親バカ全開の猫専用「ライフログアプリ」" />
+    <meta name="twitter:description" content="フォロワー数や「映え」を気にせず、親バカ全開で愛を語り合いながら大切な命の記録もしっかり守る。猫と飼い主のための新しいライフログアプリです。" />
+    <meta name="twitter:image" content="https://mia-nakata.github.io/nyan-logu/img/ogp.jpg" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,6 +37,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <header class="header js-header">
@@ -297,7 +316,7 @@
 
       <section id="troubles" class="troubles">
         <div class="l-container">
-          <h2 class="troubles__title">
+          <h2 class="troubles__title" data-aos="fade-up">
             猫は大好き。<br />
             でも、今のSNSや記録アプリに<br
               class="u-hidden-pc"
@@ -306,27 +325,50 @@
 
           <div class="troubles__content">
             <div class="troubles__bubbles">
-              <div class="troubles__bubble troubles__bubble--1">
+              <div
+                class="troubles__bubble troubles__bubble--1"
+                data-aos="fade-up"
+              >
                 <p>
                   ペットホテルや獣医さんに、<br />うちの子の細かい特徴を伝えるのが大変...
                 </p>
               </div>
-              <div class="troubles__bubble troubles__bubble--2">
+              <div
+                class="troubles__bubble troubles__bubble--2"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 <p>ワクチンの時期や、<br />初めて〇〇した日を忘れがち...</p>
               </div>
-              <div class="troubles__bubble troubles__bubble--3">
+              <div
+                class="troubles__bubble troubles__bubble--3"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <p>
                   「映え」や「フォロワー数」を気にするSNSは、見ているだけで少し疲れてしまう...
                 </p>
               </div>
-              <div class="troubles__bubble troubles__bubble--4">
+              <div
+                class="troubles__bubble troubles__bubble--4"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <p>インスタにブレた写真や変顔を連投するのは気が引ける...</p>
               </div>
-              <div class="troubles__bubble troubles__bubble--5">
+              <div
+                class="troubles__bubble troubles__bubble--5"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <p>同じような猫好きと思い切り語り合いたい！</p>
               </div>
             </div>
-            <figure class="troubles__figure">
+            <figure
+              class="troubles__figure"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
               <img
                 src="./img/trouble-woman.webp"
                 alt="悩んでいる女性"
@@ -344,9 +386,23 @@
               >が<br class="u-hidden-pc" />すべて包み込みます！
             </p>
             <div class="troubles__arrows">
-              <span class="troubles__arrow troubles__arrow--yellow"></span>
-              <span class="troubles__arrow troubles__arrow--pink"></span>
-              <span class="troubles__arrow troubles__arrow--blue"></span>
+              <div class="troubles__arrow-wrap" data-aos="fade-up">
+                <span class="troubles__arrow troubles__arrow--yellow"></span>
+              </div>
+              <div
+                class="troubles__arrow-wrap"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <span class="troubles__arrow troubles__arrow--pink"></span>
+              </div>
+              <div
+                class="troubles__arrow-wrap"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <span class="troubles__arrow troubles__arrow--blue"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -415,10 +471,9 @@
         </div>
       </section>
       <section id="features" class="p-features l-section u-bg-decor">
-        <div class="p-features__bg" aria-hidden="true"></div>
         <div class="l-container">
           <header class="p-features__header">
-            <h2 class="p-features__main-title">
+            <h2 class="p-features__main-title" data-aos="fade-up">
               にゃんログでできる、３つのこと<span class="p-features__emoji"
                 >🐾</span
               >
@@ -426,7 +481,7 @@
           </header>
 
           <article class="p-features__block">
-            <div class="p-features__block-header">
+            <div class="p-features__block-header" data-aos="fade-up">
               <div class="p-features__label">
                 <img
                   src="./img/icon-paw-1.webp"
@@ -444,7 +499,7 @@
                 </p>
               </div>
             </div>
-            <div class="swiper js-features-swiper">
+            <div class="swiper js-features-swiper" data-aos="fade-up">
               <div class="swiper-wrapper">
                 <div class="swiper-slide p-features__item">
                   <div class="p-features__body">
@@ -502,7 +557,7 @@
                 <div
                   class="swiper-slide p-features__item p-features__item--reverse"
                 >
-                  <div class="p-features__body">
+                  <div class="p-features__body" data-aos="fade-up">
                     <figure class="p-features__visual">
                       <img
                         src="./img/mockup-2.webp"
@@ -547,7 +602,7 @@
           </article>
 
           <article class="p-features__block">
-            <div class="p-features__block-header">
+            <div class="p-features__block-header" data-aos="fade-up">
               <div class="p-features__label">
                 <img
                   src="./img/icon-paw-2.webp"
@@ -565,7 +620,7 @@
                 </p>
               </div>
             </div>
-            <div class="swiper js-features-swiper">
+            <div class="swiper js-features-swiper" data-aos="fade-up">
               <div class="swiper-wrapper">
                 <div class="swiper-slide p-features__item">
                   <div class="p-features__body">
@@ -597,7 +652,7 @@
                 <div
                   class="swiper-slide p-features__item p-features__item--reverse"
                 >
-                  <div class="p-features__body">
+                  <div class="p-features__body" data-aos="fade-up">
                     <figure class="p-features__visual">
                       <img
                         src="./img/mockup-4.webp"
@@ -633,7 +688,7 @@
           </article>
 
           <article class="p-features__block">
-            <div class="p-features__block-header">
+            <div class="p-features__block-header" data-aos="fade-up">
               <div class="p-features__label">
                 <img
                   src="./img/icon-paw-3.webp"
@@ -654,7 +709,7 @@
             <div class="swiper js-features-swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide p-features__item">
-                  <div class="p-features__body">
+                  <div class="p-features__body" data-aos="fade-up">
                     <figure class="p-features__visual">
                       <img
                         src="./img/mockup-5.webp"
@@ -679,7 +734,7 @@
                 <div
                   class="swiper-slide p-features__item p-features__item--reverse"
                 >
-                  <div class="p-features__body">
+                  <div class="p-features__body" data-aos="fade-up">
                     <figure class="p-features__visual">
                       <img
                         src="./img/mockup-6.webp"
@@ -711,16 +766,7 @@
 
           <div class="p-gift">
             <div class="p-gift__top">
-              <div class="p-gift__text-area">
-                <!-- <div class="p-gift__icon u-hidden-pc">
-                  <img
-                    src="./img/icon-gift-paw.webp"
-                    alt="肉球アイコン"
-                    width="60"
-                    height="60"
-                  />
-                </div> -->
-
+              <div class="p-gift__text-area" data-aos="fade-up">
                 <h3 class="p-gift__title">
                   「尊い」の気持ちを、<br
                     class="u-hidden-pc"
@@ -757,7 +803,7 @@
             </div>
 
             <div class="p-gift__cards">
-              <article class="p-gift__card p-gift__card--orange">
+              <article class="p-gift__card p-gift__card--orange" data-aos="fade-up" data-aos-delay="100">
                 <div class="p-gift__card-inner">
                   <h4 class="p-gift__card-title">
                     メッセージと一緒に<br />おやつをプレゼント
@@ -772,7 +818,7 @@
                 </div>
               </article>
 
-              <article class="p-gift__card p-gift__card--yellow">
+              <article class="p-gift__card p-gift__card--yellow" data-aos="fade-up" data-aos-delay="200">
                 <div class="p-gift__card-inner">
                   <h4 class="p-gift__card-title">
                     愛情が目に見える<br />「おやつ貯金箱」
@@ -787,7 +833,7 @@
                 </div>
               </article>
 
-              <article class="p-gift__card p-gift__card--blue">
+              <article class="p-gift__card p-gift__card--blue" data-aos="fade-up" data-aos-delay="300">
                 <div class="p-gift__card-inner">
                   <h4 class="p-gift__card-title">
                     本物のおやつや、<br />保護猫支援に交換✨
@@ -807,10 +853,8 @@
       </section>
 
       <section id="reviews" class="p-reviews l-section u-bg-decor">
-        <div class="p-reviews__bg" aria-hidden="true"></div>
-
         <div class="l-container">
-          <header class="p-reviews__header">
+          <header class="p-reviews__header" data-aos="fade-up">
             <h2 class="p-reviews__title">
               <img
                 src="./img/decor-ribbon.svg"
@@ -828,7 +872,7 @@
             </h2>
           </header>
 
-          <div class="p-reviews__slider-wrap">
+          <div class="p-reviews__slider-wrap" data-aos="fade-up">
             <div class="swiper js-reviews-swiper">
               <div class="swiper-wrapper p-reviews__list">
                 <div class="swiper-slide p-reviews__item">
@@ -923,11 +967,9 @@
         </div>
       </section>
 
-      <section id="faq" class="p-faq l-section u-bg-decor">
-        <div class="p-faq__bg" aria-hidden="true"></div>
+      <section id="faq" class="p-faq l-section u-bg-decor" data-aos="fade-up">
         <div class="l-container p-faq__container">
           <h2 class="p-faq__title">Q&A</h2>
-
           <dl class="p-faq__list">
             <div class="p-faq__item">
               <dt>
@@ -1001,9 +1043,7 @@
         </div>
       </section>
 
-      <section class="p-cta l-section u-bg-decor">
-        <div class="p-cta__bg" aria-hidden="true"></div>
-
+      <section class="p-cta l-section u-bg-decor" data-aos="fade-up">
         <div class="l-container p-cta__grid">
           <div class="p-cta__title-area">
             <p class="p-cta__lead">さあ、うちの子だけの特別な</p>
@@ -1049,7 +1089,6 @@
 
     <footer class="p-footer">
       <div class="p-footer__bg" aria-hidden="true"></div>
-
       <div class="l-container p-footer__inner">
         <div class="p-footer__cats u-hidden-sp" aria-hidden="true">
           <img
@@ -1152,8 +1191,5 @@
         </div>
       </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
   </body>
 </html>
