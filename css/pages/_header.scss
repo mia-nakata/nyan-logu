@@ -1,0 +1,198 @@
+@use '../global/variables' as *;
+@use '../global/mixins' as *;
+
+/* =========================================
+   ヘッダー
+========================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--Milky-White);
+  z-index: 1100;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo img {
+  width: clamp(240px, 30vw, 500px);
+
+  height: auto;
+  background: none;
+  transition: all 0.3s ease;
+}
+
+/* =======================================
+   PC Navigation & Stores (基本スタイル)
+======================================= */
+.header__nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3.5vw, 40px);
+}
+
+.header__nav-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--Bitter-Choco);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.header__nav-link:hover {
+  opacity: 0.6;
+}
+
+.header__stores {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.header__store-btn img {
+  height: 42px;
+  width: auto;
+  transition: transform 0.3s ease;
+  background: none;
+}
+
+.header__store-btn:hover img {
+  transform: scale(1.05);
+}
+
+/* =======================================
+   PC Layout (FV内と追従バナーの切り替え)
+======================================= */
+@media screen and (min-width: 768px) {
+  .header {
+    position: absolute;
+    background-color: transparent;
+  }
+
+  .header__nav,
+  .header__stores {
+    display: none;
+  }
+
+  .header.is-active {
+    position: fixed;
+    background-color: var(--Milky);
+    box-shadow: 0 4px 16px rgba(74, 55, 40, 0.08);
+    animation: headerSlideDown 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  .header.is-active .header__inner {
+    height: 60px;
+    padding: 0 clamp(20px, 2vw, 40px);
+    justify-content: space-between;
+  }
+
+  .header.is-active .header__logo img {
+    width: clamp(140px, 12vw, 160px);
+  }
+
+  .header.is-active .header__nav,
+  .header.is-active .header__stores {
+    display: flex;
+  }
+}
+
+@keyframes headerSlideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Hamburger Menu (2本線デザイン)
+========================================================================== */
+.header__hamburger {
+  position: absolute;
+  right: 10px;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.header__hamburger-line {
+  position: absolute;
+  height: 2px;
+  background-color: var(--Bitter-Choco);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.header__hamburger-line:nth-child(1) {
+  top: 19px;
+  right: 12px;
+  width: 20px;
+}
+
+.header__hamburger-line:nth-child(2) {
+  bottom: 18px;
+  left: 8px;
+  width: 28px;
+}
+
+.header__hamburger.is-open .header__hamburger-line:nth-child(1) {
+  top: 50%;
+  right: 50%;
+  width: 32px;
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.header__hamburger.is-open .header__hamburger-line:nth-child(2) {
+  bottom: 50%;
+  left: 50%;
+  width: 32px;
+  transform: translate(-50%, 50%) rotate(-45deg);
+}
+
+@media screen and (max-width: 1024px) {
+  .header__inner {
+    height: 60px;
+    justify-content: center;
+  }
+  .header__hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__inner {
+    padding: 0 16px;
+  }
+  .header__logo img {
+    height: 28px;
+    width: auto;
+  }
+}
+
+

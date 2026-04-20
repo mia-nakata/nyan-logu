@@ -1,0 +1,14 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+@keyframes drawCloud {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillCloud {
+  100% {
+    fill: var(--White);
+  }
+}

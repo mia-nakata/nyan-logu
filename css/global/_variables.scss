@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Variables (Design System & Typography)
+========================================================================== */
+:root {
+  /* Color */
+  --Honey-Yellow: #f6b93b;
+  --Paw-Pink: #ffdbdf;
+  --Bitter-Choco: #4a3728;
+  --Latte-Beige: #968373;
+  --Milky-White: #fefcf5;
+  --White: #ffffff;
+  --Milky: #faf1d1;
+  --blue: #59a9c2;
+
+  /* Spacing */
+  --Spacing-16: 1rem;
+  --Spacing-24: 1.5rem;
+  --Spacing-32: 2rem;
+  --Spacing-40: 2.5rem;
+  --Spacing-48: 3rem;
+  --Spacing-64: 4rem;
+  --Spacing-80: 5rem;
+
+  /* Typography (Figma) */
+  --font-zen: "Zen Maru Gothic", sans-serif;
+  --font-nico: "Nico Moji", sans-serif;
+  --text-14: 0.875rem;
+  --text-16: 1rem;
+  --text-18: 1.125rem;
+  --text-20: 1.25rem;
+  --text-24: 1.5rem;
+  --text-28: 1.75rem;
+  --text-32: 2rem;
+  --text-46: 2.875rem;
+  --lh-auto: 1.6;
+  --lh-200: 2;
+}

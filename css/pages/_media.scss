@@ -1,0 +1,334 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+
+@media (max-width: 1024px) {
+  .fv {
+    padding-top: 60px;
+  }
+  .fv__visual {
+    padding: 0 0;
+  }
+  .fv__slide.swiper-slide-active {
+    transform: scale(1.0) !important;
+    transition: transform 0.3s ease;
+  }
+  .fv__slide {
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+  .fv__title img {
+    margin-left: 0px;
+  }
+  .troubles__title {
+    text-align: left;
+    margin-bottom: var(--Spacing-40);
+    font-size: var(--text-16);
+  }
+  .troubles__content {
+    flex-direction: column;
+    min-height: auto;
+    margin-bottom: var(--Spacing-48);
+  }
+  .troubles__bubbles {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    max-width: 400px;
+  }
+  .troubles__bubble {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+  }
+  .troubles__bubble:nth-child(odd) {
+    margin-right: auto;
+    margin-left: 0;
+    margin-top: -25px;
+  }
+  .troubles__bubble:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: -25px;
+  }
+  .troubles__bubble--1 {
+    top: 15%;
+    left: 0;
+    background-image: url("../img/bubble-bg-1.svg");
+    padding: 70px 20px 50px;
+  }
+  .troubles__bubble--2 {
+    top: 0;
+    left: 5%;
+    background-image: url("../img/bubble-bg-2.svg");
+    padding: 50px 50px 40px;
+  }
+  .troubles__bubble--4 {
+    bottom: 10%;
+    left: 5%;
+    background-image: url("../img/bubble-bg-4.svg");
+    padding: 50px 57px 40px;
+  }
+  .troubles__figure {
+    order: 2;
+  }
+  .troubles__figure img {
+    max-width: 150px;
+    padding-top: 0px;
+  }
+  .troubles__conclusion-text {
+    font-size: var(--text-18);
+  }
+  .troubles__arrow {
+    width: 16px;
+    height: 16px;
+  }
+  .troubles__arrows {
+    padding-top: var(--Spacing-32);
+  }
+}
+
+/* ==========================================================================
+   SP Layout (Concept Section)
+========================================================================== */
+@media (max-width: 767px) {
+  .concept {
+    padding-block: var(--Spacing-48);
+  }
+  .concept__title {
+    margin-bottom: var(--Spacing-16);
+    font-size: var(--text-24);
+  }
+}
+
+/* ==========================================================================
+   PC Layout (縦積み設定)
+========================================================================== */
+@media screen and (min-width: 768px) {
+  .p-features__block .swiper-wrapper {
+    flex-direction: column;
+    gap: clamp(60px, 8vw, 100px);
+  }
+  .p-features__item {
+    width: 100% !important;
+  }
+  .js-features-prev,
+  .js-features-next,
+  .js-reviews-prev,
+  .js-reviews-next {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   SP Layout (スライダー用調整)
+========================================================================== */
+@media screen and (max-width: 767px) {
+  .p-features__sub-title {
+    text-align: center;
+  }
+  .p-features__body {
+    flex-direction: column;
+  }
+  .p-features__item--reverse .p-features__body {
+    flex-direction: column;
+  }
+  .p-features__visual {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .swiper-button-next.js-features-next,
+  .swiper-button-prev.js-features-prev {
+    top: 300px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--Latte-Beige);
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: var(--Latte-Beige);
+  }
+  .swiper-button-next.js-features-next {
+    right: 0;
+  }
+  .swiper-button-prev.js-features-prev {
+    left: 0;
+  }
+
+  .swiper-button-next.js-features-next::after,
+  .swiper-button-prev.js-features-prev::after {
+    font-size: 16px;
+  }
+}
+
+/* ==========================================================================
+   SP Layout (Gift Section)
+========================================================================== */
+@media screen and (max-width: 1024px) {
+  .p-gift__title {
+    text-align: left;
+  }
+  .p-gift__top {
+    flex-direction: column;
+    text-align: center;
+    gap: 0px;
+  }
+
+  .p-gift__text-area,
+  .p-gift__ill {
+    flex: none;
+    width: 100%;
+  }
+
+  .p-gift__ill-img {
+    max-width: 320px;
+  }
+
+  .p-gift__cards {
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+
+  .p-gift__card {
+    max-width: 336px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .p-gift__card-title {
+    font-size: 16px;
+  }
+  .p-gift__card-text {
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================================
+   PC Layout (Grid設定)
+========================================================================== */
+@media screen and (min-width: 768px) {
+  .p-reviews .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 32px);
+  }
+  .p-reviews__item {
+    width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   SP Layout (スライダー調整)
+========================================================================== */
+@media screen and (max-width: 767px) {
+  .swiper-button-prev.js-reviews-prev,
+  .swiper-button-next.js-reviews-next {
+    top: 45%;
+    width: 40px;
+    height: 40px;
+    color: var(--Latte-Beige);
+    margin-top: 0;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .swiper-button-prev.js-reviews-prev {
+    left: 0;
+  }
+  .swiper-button-next.js-reviews-next {
+    right: 0;
+  }
+
+  .swiper-button-prev.js-reviews-prev::after,
+  .swiper-button-next.js-reviews-next::after {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+/* ==========================================================================
+   PC Layout (Gridエリアを使った配置)
+========================================================================== */
+@media screen and (min-width: 768px) {
+  .p-cta__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "visual title"
+      "visual stores";
+    gap: 24px clamp(32px, 5vw, 64px);
+    align-items: center;
+  }
+
+  .p-cta__title-area {
+    grid-area: title;
+    align-self: end;
+  }
+
+  .p-cta__visual {
+    grid-area: visual;
+  }
+
+  .p-cta__stores {
+    grid-area: stores;
+    align-self: start;
+  }
+}
+
+/* ==========================================================================
+   SP Layout
+========================================================================== */
+@media screen and (max-width: 767px) {
+  .p-cta__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(32px, 5vw, 40px);
+    text-align: center;
+  }
+
+  .p-cta__title-area {
+    order: 1;
+  }
+
+  .p-cta__visual {
+    order: 2;
+  }
+
+  .p-cta__stores {
+    order: 3;
+    justify-content: center;
+  }
+}
+/* ==========================================================================
+   フッターSP Layout
+========================================================================== */
+
+@media screen and (max-width: 767px) {
+  .p-footer::before,
+  .p-footer::after {
+    display: none;
+  }
+
+  .p-footer__bg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/bg-footer-sp.svg");
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .p-footer__inner {
+    padding-top: 80px;
+  }
+}

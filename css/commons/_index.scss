@@ -1,0 +1,47 @@
+@use "destyle";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-zen);
+  font-size: var(--text-16);
+  font-weight: 500;
+  color: var(--Bitter-Choco);
+  background-color: var(--Milky-White);
+  line-height: var(--lh-auto);
+  -webkit-font-smoothing: antialiased;
+}
+
+.l-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.l-section {
+  padding-block: var(--Spacing-80);
+}
+
+@media (max-width: 767px) {
+  .l-section {
+    padding-block: var(--Spacing-48);
+  }
+}
+
+/* ==========================================================================
+   Utility Classes (表示・非表示の切り替え)
+========================================================================== */
+@media screen and (min-width: 1025px) {
+  .u-hidden-pc {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .u-hidden-sp {
+    display: none !important;
+  }
+}

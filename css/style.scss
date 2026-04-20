@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// 1. 変数やmixin
+@use "global/variables";
+@use "global/mixins";
+
+// 2. リセットCSS
+@use "commons/destyle";
+
+// 3. ベーススタイル・汎用クラス
+@use "commons";
+
+// 4. 各パーツやページのスタイル
+@use "pages/keyframes";
+@use "pages/header";
+@use "pages/main";
+@use "pages/drawer";
+@use "pages/footer";
+@use "pages/media";
