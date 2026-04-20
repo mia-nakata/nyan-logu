@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       drawerBtn.classList.add('is-open');
       drawerBtn.setAttribute('aria-expanded', 'true');
       drawer.setAttribute('aria-hidden', 'false');
-      body.style.overflow = 'hidden'; // 背面のスクロール固定
+      body.style.overflow = 'hidden';
     }
   };
 
@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (drawerLinks.length > 0) {
     drawerLinks.forEach((link) => {
       link.addEventListener('click', () => {
-        // メニューリンククリック時にドロワーが開いていれば閉じる
         if (drawer.classList.contains('is-open')) toggleDrawer();
       });
     });
@@ -43,14 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const fvSection = document.querySelector('.fv');
 
   if (headerElement && fvSection) {
-    // スクロールイベントを監視
     window.addEventListener('scroll', () => {
-      // PC幅（768px以上）の時のみ動作させる
       if (window.innerWidth >= 768) {
-        // ファーストビュー(FV)の高さを取得
         const fvHeight = fvSection.offsetHeight;
-
-        // スクロール量がFVの高さを超えたら表示クラスを付与
         if (window.scrollY > fvHeight) {
           headerElement.classList.add('is-active');
         } else {
@@ -121,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (reviewsSwiperEl && typeof Swiper !== 'undefined') {
     new Swiper('.js-reviews-swiper', {
-      // ▼ 3番(Features)と同じく、ブレイクポイントでON/OFFを自動切り替え！
       breakpoints: {
         0: {
           enabled: true,
@@ -164,33 +157,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================================================
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -20% 0px', // 画面の下から20%の位置を通過したら発火
+    rootMargin: '0px 0px -20% 0px',
     threshold: 0,
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // 画面に入ったら is-active クラスを付与
         entry.target.classList.add('is-active');
-        // 一度アニメーションしたら監視を解除する（何度も動かないようにする）
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
-
-  // js-observe クラスがついた要素を監視対象にする
   const observeElements = document.querySelectorAll('.js-observe');
   observeElements.forEach((el) => observer.observe(el));
+
   // ==================================================
   // 8. AOS (Animate On Scroll) Init
   // ==================================================
   if (typeof AOS !== 'undefined') {
     AOS.init({
-      offset: 100, // アニメーションが始まるスクロール位置（px）
-      duration: 800, // アニメーションの完了にかかる時間（ミリ秒）★少し長めが優しいです
-      easing: 'ease-out', // アニメーションの動き方
-      once: true, // スクロールして戻った時に、何度もアニメーションするかどうか（trueで1回きり）
+      offset: 100,
+      duration: 800,
+      easing: 'ease-out',
+      once: true,
     });
   }
 });
