@@ -1780,6 +1780,7 @@ body {
     margin-top: 0;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--Latte-Beige);
   }
   .swiper-button-prev.js-reviews-prev {
     left: 0;
@@ -1789,8 +1790,7 @@ body {
   }
   .swiper-button-prev.js-reviews-prev::after,
   .swiper-button-next.js-reviews-next::after {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
   }
 }
 /* ==========================================================================

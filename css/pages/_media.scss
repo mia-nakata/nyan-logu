@@ -1,6 +1,5 @@
-@use "../global/variables" as *;
-@use "../global/mixins" as *;
-
+@use '../global/variables' as *;
+@use '../global/mixins' as *;
 
 @media (max-width: 1024px) {
   .fv {
@@ -10,7 +9,7 @@
     padding: 0 0;
   }
   .fv__slide.swiper-slide-active {
-    transform: scale(1.0) !important;
+    transform: scale(1) !important;
     transition: transform 0.3s ease;
   }
   .fv__slide {
@@ -58,19 +57,19 @@
   .troubles__bubble--1 {
     top: 15%;
     left: 0;
-    background-image: url("../img/bubble-bg-1.svg");
+    background-image: url('../img/bubble-bg-1.svg');
     padding: 70px 20px 50px;
   }
   .troubles__bubble--2 {
     top: 0;
     left: 5%;
-    background-image: url("../img/bubble-bg-2.svg");
+    background-image: url('../img/bubble-bg-2.svg');
     padding: 50px 50px 40px;
   }
   .troubles__bubble--4 {
     bottom: 10%;
     left: 5%;
-    background-image: url("../img/bubble-bg-4.svg");
+    background-image: url('../img/bubble-bg-4.svg');
     padding: 50px 57px 40px;
   }
   .troubles__figure {
@@ -234,6 +233,7 @@
     margin-top: 0;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--Latte-Beige);
   }
   .swiper-button-prev.js-reviews-prev {
     left: 0;
@@ -244,8 +244,7 @@
 
   .swiper-button-prev.js-reviews-prev::after,
   .swiper-button-next.js-reviews-next::after {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
   }
 }
 
@@ -257,8 +256,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "visual title"
-      "visual stores";
+      'visual title'
+      'visual stores';
     gap: 24px clamp(32px, 5vw, 64px);
     align-items: center;
   }
@@ -320,7 +319,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../img/bg-footer-sp.svg");
+    background-image: url('../img/bg-footer-sp.svg');
     background-size: 100% auto;
     background-position: center top;
     background-repeat: no-repeat;
